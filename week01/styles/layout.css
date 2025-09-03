@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
+/* Header y Footer */
 header, footer {
   background: #333;
   color: white;
@@ -16,7 +16,7 @@ header, footer {
   text-align: center;
 }
 
-
+/* Navbar */
 nav {
   background: #000;
 }
@@ -32,9 +32,10 @@ nav a {
   font-weight: bold;
 }
 
+/* Content */
 .content {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1fr; /* main + aside */
   min-height: 300px;
 }
 main {
