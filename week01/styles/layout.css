@@ -1,0 +1,37 @@
+:root{
+  --dark: #333;       /* header y footer */
+  --nav:  #000;       /* barra de navegación */
+  --main: #d3d3d3;    /* área principal */
+  --aside:#fff;       /* aside */
+}
+
+body{
+    display: grid;
+    height: 100vh;
+    grid-template: auto 1fr auto / 300px 1fr auto;
+}
+
+header{
+    grid-column: 1 / 4;
+    background-color: var(--dark);
+}
+
+nav{
+    grid-column: 1 / 4;
+    background-color: var(--nav);
+}
+
+main{
+    grid-column: 1 / 4;
+    background-color: var(--main);
+}
+
+aside{
+    grid-column: 3 / 4;
+    background-color: var(--aside);
+}
+
+footer{
+    grid-column: 1 / 4;
+    background-color: var(--dark);
+}
