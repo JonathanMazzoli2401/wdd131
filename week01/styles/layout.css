@@ -1,37 +1,47 @@
-:root{
-  --dark: #333;       /* header y footer */
-  --nav:  #000;       /* barra de navegación */
-  --main: #d3d3d3;    /* área principal */
-  --aside:#fff;       /* aside */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    display: grid;
-    height: 100vh;
-    grid-template: auto 1fr auto / 300px 1fr auto;
+body {
+  font-family: Arial, sans-serif;
 }
 
-header{
-    grid-column: 1 / 4;
-    background-color: var(--dark);
+
+header, footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-nav{
-    grid-column: 1 / 4;
-    background-color: var(--nav);
+
+nav {
+  background: #000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-main{
-    grid-column: 1 / 4;
-    background-color: var(--main);
+.content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  min-height: 300px;
 }
-
-aside{
-    grid-column: 3 / 4;
-    background-color: var(--aside);
+main {
+  background: #ccc;
+  padding: 20px;
 }
-
-footer{
-    grid-column: 1 / 4;
-    background-color: var(--dark);
+aside {
+  background: #fff;
+  padding: 20px;
 }
