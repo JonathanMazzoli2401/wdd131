@@ -1,48 +1,88 @@
+:root{
+  --primary:#1B4965;   /* indigo dye */
+  --secondary:#BEE9E8; /* mint green */
+  --accent1:#2E6E4C;   /* dark spring green */
+  --accent2:#F5F5DC;   /* beige */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  height: 100%;
+}
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", system-ui, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* main + aside */
+  grid-template-rows: auto 1fr auto; /* header + content + footer */
+  grid-template-areas: "header header"
+                       "main aside"
+                       "footer footer";
+  min-height: 100vh;
+  color:#0b2a3a;
 }
 
-/* Header y Footer */
-header, footer {
-  background: #333;
-  color: white;
+header {
+  grid-area: header;
+  background: var(--primary);
+  color: #fff;
   padding: 20px;
-  text-align: center;
 }
 
-/* Navbar */
-nav {
-  background: #000;
+header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  letter-spacing: .5px;
 }
-nav ul {
+
+header nav ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  gap: 12px;
   padding: 10px 0;
+  background: #0e344a;
+  border-radius: 6px;
 }
-nav a {
-  color: white;
+header nav a {
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+header nav a:hover,
+header nav a:focus {
+  background: var(--accent1);
+  outline: none;
 }
 
-/* Content */
-.content {
-  display: grid;
-  grid-template-columns: 3fr 1fr; /* main + aside */
-  min-height: 300px;
-}
 main {
-  background: #ccc;
+  grid-area: main;
+  background: var(--accent2);
   padding: 20px;
+  font-size: 1.05rem;
 }
 aside {
-  background: #fff;
+  grid-area: aside;
+  background: var(--accent2);
   padding: 20px;
+  border-left: 3px solid rgba(0, 0, 0, 0.8);
+}
+
+footer {
+  grid-area: footer;
+  background: var(--primary);
+  color: #fff;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
