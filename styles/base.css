@@ -1,0 +1,153 @@
+:root{
+  --brand-900:#243d56; --brand-800:#2f4f6b;
+  --bg:#f3f4f6; --surface:#fff; --border:#d6d6dc;
+  --text:#1f2937; --muted:#5b6470; --link:#274d7e; --link-hover:#183c66;
+  --accent:#e5f36b; --ok:#9af09a;
+  --r:10px; --shadow:0 2px 14px rgba(0,0,0,.06);
+  --font-head:"Bebas Neue",ui-sans-serif,system-ui,sans-serif;
+  --font-body:"Open Sans","Roboto",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+}
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+
+
+html,body{height:100%}
+body{
+  min-height:100vh;          
+  min-height:100dvh;         
+  min-height:100svh;         
+  display:grid;
+  grid-template-rows:auto 1fr auto; 
+  background:var(--bg); color:var(--text); line-height:1.65;
+  font-family:var(--font-body); font-optical-sizing:auto;
+}
+
+
+.site-header{background:var(--brand-900);color:#fff;padding:.6rem 1rem .3rem;border-bottom:1px solid rgba(255,255,255,.12)}
+#course-title{display:block;text-align:center;font-family:var(--font-head);font-weight:400;letter-spacing:.3px;font-size:clamp(1.35rem, 3vw, 1.9rem);line-height: 1.2;}
+.student-accent,.accent{color:var(--accent)}
+
+
+.site-nav{background:var(--brand-800);margin-top:.5rem;border-radius:var(--r) var(--r) 0 0}
+.site-nav ul{
+  list-style:none;
+  display:flex !important; flex-wrap:wrap; justify-content:space-around;
+  gap:.25rem; margin:0; padding:.5rem 0;
+}
+.site-nav li{display:flex}
+.site-nav a{color:#fff;text-decoration:none;padding:.4rem .8rem;border-radius:.5rem;font-weight:600}
+.site-nav a:hover,.site-nav a:focus{background:rgba(255,255,255,.14);transform:translateY(-1px);transition:.15s}
+
+
+.site-main{padding:1rem}
+.site-main > h1{
+  text-align: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: .3px;
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  margin: .75rem auto 1rem;
+}
+.content-grid,.grid{
+  max-width:1100px; margin-inline:auto;
+  display:grid; gap:1rem;
+  grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+  align-items:stretch;                
+}
+.content-grid > *, .grid > *{ height:100%; } 
+
+
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r); box-shadow:var(--shadow);
+  padding:0; overflow:hidden;
+  display:grid; grid-template-rows:auto 1fr; 
+}
+.card > h2, .card > .card-title{
+  background:var(--brand-800); color:#fff; padding:.6rem .9rem;
+  font-family:var(--font-head); font-weight:400; letter-spacing:.3px; font-size:1.1rem; text-align: center;
+}
+.card > *:not(h2):not(.card-title){ padding:.9rem; }
+
+
+.about-grid,.about{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.portrait img{width:140px;border-radius:6px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+
+
+.subheading,.sub{margin:.3rem .9rem 0;padding-top:.2rem;border-bottom:3px double var(--border);font-family:var(--font-head);font-weight:700;text-align: center;}
+
+
+.place-grid,.place{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;padding-top:.5rem}
+.flag figcaption{font-size:.85rem;color:var(--muted);margin-top:.3rem}
+
+
+
+.resources ul,
+.links{
+  list-style: disc outside;
+  margin: .5rem .8rem 1rem .9rem;  
+  padding-left: 1.2rem;            
+  width: auto;                     
+  text-align: left;                
+}
+
+
+.resources li,
+.links li{
+  display: list-item;
+  margin: .35rem 0;
+}
+.resources li::marker,
+.links li::marker{
+  color: #000;  
+}
+
+
+.resources a,
+.links a{
+  color: revert;
+  text-decoration: underline;
+  font-weight: 400;
+}
+.resources a:hover,
+.links a:hover{
+  color: revert;
+  text-decoration: underline;
+}
+
+
+.site-footer{margin-top:.5rem}
+.footer-top{
+  background:var(--surface);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  text-align:center; padding:.8rem 1rem; color:var(--muted); font-weight:600
+}
+.footer-top .sep{margin:0 .4rem}
+.footer-bottom{background:var(--brand-800);text-align:center;padding:.5rem 1rem}
+#lastModified{color:var(--ok);font-weight:700}
+
+.card.resources{            
+  display: grid;
+  grid-template-rows: auto 1fr;   
+}
+
+.card.resources > ul{
+  place-self: center start;       
+  list-style: disc outside;
+  margin: .1rem .9rem 3rem .9rem; 
+  padding-left: 1.2rem;           
+}
+
+.card.resources li{
+  display: list-item;
+  margin: .35rem 0;
+}
+.card.resources li::marker{
+  color: #000;                    
+}
+
+.card.resources ul{ list-style: disc outside !important; }
+
+

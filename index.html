@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Jonathan Mazzoli</title>
+    <meta name="description" content="Landing page for WDD 131 - Dynamic Web Fundamentals course by Jonathan Mazzoli">
+    <meta name="author" content="Jonathan Mazzoli">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;0,400;0,600;0,700;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+        <nav class="site-nav" aria-label="Principal">
+            <ul class="nav-list">
+                <li><a href="https://www.linkedin.com/in/jonathan-mazzoli" target="_blank" rel="noopener">Linkedin</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/34?lang=eng&id=p17#p17" target="_blank" rel="noopener">Scripture</a></li>
+                <li><a href="#" aria-disabled="true">Final Project </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <h1>Jonathan Mazzoli</h1>
+        <section class="content-grid">
+            <div class="left-column">
+                <section class="card">
+                    <h2 class="card-title">About Me</h2>
+                    
+                    <div class="about-grid">
+                        <div class="about-text">
+                             <p>My name is Jonathan, and I go by Jonathan. I live in Uruguay and work as a sports analyst. I enjoy building clean, accessible and fast websites.</p>
+                            <p>I love to learn new things and spend time with my family. I also enjoy traveling and exploring technology.</p>
+                        </div>
+
+                        <figure class="profile-image">
+                            <img src="images/profile.jpg" alt="Jonathan Mazzoli" width="165" height="170">
+                        </figure>
+                    </div>
+
+                    <h3 class="subheading">Canelones, Uruguay</h3>
+
+                    <div class="place-grid">
+                        <figure class="flag">
+                            <img src="images/Uruguayan flag.jpg" alt="Official Flag of Uruguay" width="140" height="90">
+                            <figcaption><em>Official Flag of Uruguay</em></figcaption>
+                        </figure>
+
+                        <p>Uruguay is the second smallest country in South America, located between Brazil and Argentina along the Atlantic Ocean. It is known for its high quality of life, stable democracy, and progressive policies. The country is famous for mate tea, beef production, and its passion for soccer, with Montevideo hosting nearly half of the nation’s population.</p>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="card resources">
+                <h2 class="card-title">Web Dev Resources</h2>
+                <ul>
+                    <li><a href="https://dev.to/" target="_blank" rel="noopener">Dev.to Community</a></li>
+                    <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener">Smashing Magazine</a></li>
+                    <li><a href="https://css-tricks.com/" target="_blank" rel="noopener">CSS Tricks</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3 Schools</a></li>
+                    <li><a href="https://www.udemy.com/" target="_blank" rel="noopener">Udemy</a></li>
+                    <li><a href="https://placeholder.com/" target="_blank" rel="noopener">Image Placeholder</a></li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <p>&copy; <span id="currentyear"></span> <span class="sep">•</span> Jonathan Mazzoli <span class="sep">•</span> Uruguay</p>
+        </div>
+        <div class="footer-bottom">
+            <p id ="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
