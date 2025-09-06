@@ -155,4 +155,18 @@ body{
 
 .card.resources ul{ list-style: disc outside !important; }
 
+#course-title{
+  display: inline-flex;           
+  align-items: baseline;
+  gap: .5rem;
+  justify-content: center;        
+  width: 100%;
+}
+
+
+#course-title .student-name{
+  color: var(--accent);           
+  font-weight: 500;
+  letter-spacing: .2px;
+}
 
