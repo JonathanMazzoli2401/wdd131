@@ -39,8 +39,12 @@ body{
 .site-nav li{display:flex}
 .site-nav a{color:#fff;text-decoration:none;padding:.4rem .8rem;border-radius:.5rem;font-weight:600}
 .site-nav a:hover,.site-nav a:focus{background:rgba(255,255,255,.14);transform:translateY(-1px);transition:.15s}
+.site-nav .disabled-link{
+  color:#fff; opacity:.7; cursor:not-allowed;
+  display:inline-block; padding:.4rem .8rem; border-radius:.5rem;
+}
 
-
+.sr-only{position:absolute;left:-9999px}
 .site-main{padding:1rem}
 .site-main > h1{
   text-align: center;
