@@ -164,6 +164,8 @@ body{
 .links a,
 .footer-top,
 .footer-bottom {
-  background-color: transparent;
+  background-color: var(--brand-800);
+  color: #fff;
 }
+
 
