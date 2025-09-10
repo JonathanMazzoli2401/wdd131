@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <meta name="author" content="Jonathan Mazzoli">
+    <meta name="description" content="A collection of temples pictures around the world.">
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <h1>Temple Album</h1>
+            <button id="menu" class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        </div>
+        <nav id="primary-nav" class="nav">
+            <a href="#">Home</a>
+            <a href="#">Old</a>
+            <a href="#">New</a>
+            <a href="#">Large</a>
+            <a href="#">Small</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Temples Gallery</h2>
+        <section class="grid">
+            <figure>
+                <img src="/images/montevideotemple.jpg" alt="Montevideo Temple">
+                <figcaption>Montevideo, Montevideo</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/saltlaketemple.jpg" alt="Salt Lake Temple">
+                <figcaption>Salt Lake Temple, Utah</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/brasiliatemple.jpg" alt="Brasilia Temple">
+                <figcaption>Brasilia, Brasilia</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/sandiegotemple.jpg" alt="San Diego Temple">
+                <figcaption>San Diego, California</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/rometemple.jpg" alt="Rome Temple">
+                <figcaption>Rome, Italy</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/mantitemple.jpg" alt="Manti Temple">
+                <figcaption>Manti, Utah</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/provocitycentertemple.jpg" alt="Provo City Center Temple">
+                <figcaption>Provo, Utah</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/sapporotemple.jpg" alt="Sapporo Temple">
+                <figcaption>Sapporo, Japan</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/stgeorgetemple.jpg" alt="St. George Temple">
+                <figcaption>St. George, Utah</figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <p>&copy; <span id="currentyear"></span> <span class="sep">•</span>Jonathan Mazzoli <span class="sep">•</span> Uruguay</p>
+        </div>
+        <div class="footer-bottom">
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

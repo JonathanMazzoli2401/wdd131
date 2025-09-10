@@ -1,0 +1,19 @@
+.menu{ display:none; }
+.nav{
+  display:flex !important;
+  flex-direction:row;
+  gap:.5rem;
+}
+
+header{
+  display:grid;
+  grid-template-columns: 1fr auto; 
+  align-items:center;
+  gap:1rem;
+}
+
+.brand{ justify-content:flex-start; }
+
+.grid{
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
