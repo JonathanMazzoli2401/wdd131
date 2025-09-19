@@ -52,7 +52,7 @@ body{
   top: 12px; left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  pointer-events: none;
+  z-index: 1;
 }
 .hero-title h2{
   display:inline-block;
