@@ -1,0 +1,190 @@
+:root{
+  --primary: #5EC1F4;       
+  --primary-dark: #1B4965;  
+  --accent: #F0C419;        
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+
+  --radius: 10px;
+  --shadow: 0 10px 24px rgba(0,0,0,.16);
+  --card-border: rgba(0,0,0,.06);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Open Sans", sans-serif;
+  color: var(--text);
+  background: #f6fbff;
+  line-height: 1.5;
+}
+
+/* ---------------- HEADER ---------------- */
+.site-header{
+  background: var(--primary-dark);
+  color: #fff;
+  text-align:center;
+  padding: 1rem .75rem .5rem;
+  box-shadow: var(--shadow);
+}
+.site-header h1{
+  font: 700 clamp(1.6rem, 4.5vw, 2.4rem)/1 "Bebas Neue", sans-serif;
+}
+.accent-bar{
+  height: 8px;
+  background: var(--accent);
+  margin-top: .5rem;
+}
+
+/* ---------------- HERO ---------------- */
+.hero{
+  position: relative;
+  width: min(1200px, 92vw);
+  margin: 1rem auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.hero picture, .hero img{display:block; width:100%; height:auto}
+
+.hero-title{
+  position:absolute;
+  top: 12px; left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+.hero-title h2{
+  display:inline-block;
+  background: rgba(0,0,0,.55);
+  color:#fff;
+  padding:.4rem .9rem;
+  border-radius:8px;
+  font:700 clamp(1.1rem,3vw,2rem)/1 "Bebas Neue",sans-serif;
+}
+
+/* ---------------- CARDS ---------------- */
+.overlay-cards{ position:absolute; inset:0; display:none; }
+
+/* Base card */
+.card{
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+/* Key/Value list */
+.kv{ list-style:none; margin-top:.25rem; }
+.kv li{
+  display:grid;
+  grid-template-columns: 150px 1fr;
+  gap:.6rem;
+  padding:.18rem 0;
+}
+.k{ font-weight:700; color: var(--muted); }
+.v{ font-weight:600; }
+
+/* Mobile card headings */
+.data h3, .weather h3{
+  font:700 1.35rem/1 "Bebas Neue",sans-serif;
+  color:var(--primary-dark);
+  text-align:center;
+  margin-bottom:.6rem;
+}
+
+/* Weather icon for mobile */
+.weather-icon-mobile{
+  display:block;
+  text-align:center;
+  margin-bottom:.5rem;
+}
+
+/* Mobile stacked cards */
+.mobile-only{ width:min(800px,92vw); margin:.75rem auto 0; }
+
+/* ---------------- FOOTER ---------------- */
+.site-footer{ margin-top:1rem; }
+.footer-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:.9rem .75rem;
+  border-top:6px solid var(--accent);
+}
+
+/* ---------------- WIDE VIEW ---------------- */
+/* ---------- WIDE VIEW: single ribbon half-outside, half-inside ---------- */
+@media (min-width:768px){
+  .mobile-only{ display:none; }
+  .overlay-cards{ position:absolute; inset:0; display:block; }
+
+  /* Card translúcida; importante: permitir overflow para que la barra salga afuera */
+  .overlay-cards .card{
+    position:absolute;
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(0,0,0,.10);
+    box-shadow:0 10px 24px rgba(0,0,0,.16);
+    padding:1rem 1.1rem 1rem;             /* padding-top normal */
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+    overflow:visible;                       /* <-- clave para que la barra salga */
+  }
+
+  /* === RIBBON: una sola barra que sale a la izquierda y entra a la tarjeta === */
+  :root{ --ribbon-out: 29px; }              /* cuánto “sale” hacia la izquierda */
+
+  .overlay-cards .card h3{
+    display:flex;
+    align-items:center;
+    /* hacemos que la barra se desplace hacia la izquierda y gane ancho */
+    transform: translateX(calc(-1 * var(--ribbon-out)));
+    width: auto;
+    max-width: 900%;
+    margin: -1rem 0 .75rem 0;               /* se pega al borde superior interno */
+    padding: .70rem 1rem;
+    background: var(--primary-dark);        /* usa tu color */
+    color:#fff;
+    font:1200 1.15rem/1 "Bebas Neue",sans-serif;
+    letter-spacing:.4px;
+    text-transform:none;
+  }
+
+  /* Ícono ⛅ al extremo derecho del ribbon */
+  .overlay-cards .weather h3::after{
+    content:"⛅";
+    margin-left:3rem;
+    font-size:1.1rem;
+    line-height:1;
+  }
+
+  /* Filas key/value */
+  .kv{ list-style:none; margin-top:.35rem; }
+  .kv li{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:.55rem;
+    padding:.18rem 0;
+  }
+  .k{ font-weight:700; color:#3b4453; }
+  .v{ font-weight:600; color:#1b2540; }
+
+  /* Posiciones (ajusta si tu imagen cambia) */
+  .overlay-cards .data{
+    top:11%;
+    left:4%;
+    max-width:430px;
+  }
+  .overlay-cards .weather{
+    right:4%;
+    bottom:8.5%;
+    max-width:360px;
+  }
+
+  /* Ocultar el SVG móvil en wide */
+  .overlay-cards .weather .weather-icon-mobile{ display:none; }
+}
+
+
