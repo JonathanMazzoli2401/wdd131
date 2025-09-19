@@ -10,7 +10,6 @@
   --shadow: 0 10px 24px rgba(0,0,0,.16);
   --card-border: rgba(0,0,0,.06);
 
-  /* how far the ribbon sticks out on the left in wide view */
   --ribbon-out: 29px;
 }
 
@@ -31,7 +30,6 @@ body{
 
 main{ flex:1;}
 
-/* HEADER */
 .site-header{
   background: var(--primary-dark);
   color: #fff;
@@ -44,7 +42,6 @@ main{ flex:1;}
 }
 .accent-bar{ height: 8px; background: var(--accent); margin-top: .4rem; }
 
-/* HERO */
 .hero{
   position: relative;
   width: min(1200px, 92vw);
@@ -60,7 +57,7 @@ main{ flex:1;}
   top: 12px; left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  z-index: 1; /* validator-friendly replacement for pointer-events */
+  z-index: 1; 
 }
 .hero-title h2{
   display:inline-block;
@@ -71,7 +68,6 @@ main{ flex:1;}
   font:700 clamp(1.1rem,3vw,2rem)/1 "Bebas Neue",sans-serif;
 }
 
-/* CARDS — mobile defaults (stack below the image) */
 .card{
   background: var(--surface);
   border-radius: var(--radius);
@@ -100,12 +96,11 @@ main{ flex:1;}
 }
 .weather-icon-mobile{ display:block; text-align:center; margin-bottom:.5rem; }
 .weather-icon-mobile img {
-  max-width: 80px;   /* you can try 60px if you want it smaller */
+  max-width: 80px;   
   height: auto;
   display: inline-block;
 }
 
-/* FOOTER */
 .site-footer{ margin-top:auto;}
 .footer-bar{
   background:var(--primary-dark);
@@ -115,10 +110,9 @@ main{ flex:1;}
   border-top:6px solid var(--accent);
 }
 
-/* WIDE VIEW — overlay the same cards on the hero */
 @media (min-width:768px){
   .card{
-    position:absolute;     /* overlay */
+    position:absolute;     
     margin:0;
     width:auto;
     background:rgba(255,255,255,.78);
@@ -127,21 +121,19 @@ main{ flex:1;}
     padding:1rem 1.1rem 1rem;
     backdrop-filter:blur(4px);
     -webkit-backdrop-filter:blur(4px);
-    overflow:visible;       /* let the left stub stick out */
-    z-index:2;              /* cards over the hero title */
+    overflow:visible;       
+    z-index:2;              
   }
 
-  /* positions like your current layout */
   .data{ top:11%; left:4%; max-width:430px; }
   .weather{ right:4%; bottom:8.5%; max-width:360px; }
 
-  /* single ribbon: half outside (left) + shorter inside */
   .card h3{
     margin: -1rem 0 .75rem 0;
     display:inline-flex;
     align-items:center;
     transform: translateX(calc(-1 * var(--ribbon-out)));
-    max-width: 60%;                /* controls the inside length */
+    max-width: 60%;                
     padding:.70rem 1rem;
     background: var(--primary-dark);
     color:#fff;
@@ -150,7 +142,6 @@ main{ flex:1;}
     text-transform:none;
   }
 
-  /* wide: hide big SVG and add icon to the heading */
   .weather .weather-icon-mobile{ display:none; }
   .weather h3::after{ content:"⛅"; margin-left:.6rem; font-size:1.1rem; line-height:1; }
 }
