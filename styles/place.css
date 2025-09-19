@@ -75,6 +75,9 @@ body{
   border: 1px solid var(--card-border);
   box-shadow: var(--shadow);
 }
+.card h3{
+    text-transform: capitalize;
+}
 
 /* Key/Value list */
 .kv{ list-style:none; margin-top:.25rem; }
