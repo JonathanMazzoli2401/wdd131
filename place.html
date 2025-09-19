@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Uruguay | Country Page</title>
   <meta name="description" content="Responsive country page about Uruguay that matches WDD131 Week 03 wireframes." />
-  <meta name="author" content="Jonathan Mazzoli">
+  <meta name="author" content="Jonathan Mazzoli" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@
   </header>
 
   <main>
-    <!-- HERO (changes image between mobile and wider) -->
+    <!-- One hero container. Same cards will stack on mobile and overlay on wide. -->
     <section class="hero" aria-label="Hero Uruguay">
       <picture>
-        <!-- Wider screens: panoramic city image -->
+        <!-- Wide image -->
         <source
           media="(min-width: 768px)"
           srcset="
@@ -33,7 +33,7 @@
           sizes="(min-width: 1200px) 1200px, 92vw"
           type="image/webp"
         />
-        <!-- Mobile screens: different photo, tighter crop -->
+        <!-- Mobile image -->
         <source
           media="(max-width: 767px)"
           srcset="
@@ -46,72 +46,40 @@
         <img src="images/city_700.webp" alt="Historic architecture in Montevideo, Uruguay" width="1400" height="700" loading="eager">
       </picture>
 
-      <!-- Overlay heading (visible in wider like the screenshot) -->
       <div class="hero-title">
         <h2>Oriental Republic of Uruguay</h2>
       </div>
 
-      <!-- Overlay cards (WIDER). In mobile they render as normal sections below. -->
-      <div class="overlay-cards">
-        <section class="card data" aria-labelledby="data-title">
-          <h3 id="data-title">Data</h3>
-          <ul class="kv">
-            <li><span class="k">Area:</span><span class="v">176,215 sq km</span></li>
-            <li><span class="k">Population:</span><span class="v">≈ 3,500,000</span></li>
-            <li><span class="k">Capital:</span><span class="v">Montevideo</span></li>
-            <li><span class="k">Languages:</span><span class="v">Spanish (Rioplatense)</span></li>
-            <li><span class="k">Currency:</span><span class="v">Uruguayan Peso (UYU)</span></li>
-            <li><span class="k">Time Zone:</span><span class="v">UTC−3</span></li>
-            <li><span class="k">Calling Code:</span><span class="v">+598</span></li>
-            <li><span class="k">Internet TLD:</span><span class="v">.uy</span></li>
-          </ul>
-        </section>
+      <!-- Single set of cards (no duplicates). -->
+      <section class="card data" aria-labelledby="data-title">
+        <h3 id="data-title">Data</h3>
+        <ul class="kv">
+          <li><span class="k">Area:</span><span class="v">176,215 sq km</span></li>
+          <li><span class="k">Population:</span><span class="v">≈ 3,500,000</span></li>
+          <li><span class="k">Capital:</span><span class="v">Montevideo</span></li>
+          <li><span class="k">Languages:</span><span class="v">Spanish (Rioplatense)</span></li>
+          <li><span class="k">Currency:</span><span class="v">Uruguayan Peso (UYU)</span></li>
+          <li><span class="k">Time Zone:</span><span class="v">UTC−3</span></li>
+          <li><span class="k">Calling Code:</span><span class="v">+598</span></li>
+          <li><span class="k">Internet TLD:</span><span class="v">.uy</span></li>
+        </ul>
+      </section>
 
-        <section class="card weather" aria-labelledby="weather-title">
-          <h3 id="weather-title">Weather</h3>
+      <section class="card weather" aria-labelledby="weather-title">
+        <h3 id="weather-title">Weather</h3>
 
-          <!-- SVG icon (VISIBLE in mobile; hidden in wider) -->
-          <figure class="weather-icon-mobile">
-            <img src="images/weather_icon.svg" alt="Weather icon" width="80" height="80">
-          </figure>
+        <!-- SVG icon is visible on mobile; hidden in wide via CSS -->
+        <figure class="weather-icon-mobile">
+          <img src="images/weather_icon.svg" alt="Weather icon" width="80" height="80">
+        </figure>
 
-          <ul class="kv">
-            <li><span class="k">Temperature:</span><span class="v"><span id="temp-value">10</span> °C</span></li>
-            <li><span class="k">Conditions:</span><span class="v">Partly Cloudy</span></li>
-            <li><span class="k">Wind:</span><span class="v"><span id="wind-value">5</span> km/h</span></li>
-            <li><span class="k">Wind Chill:</span><span class="v"><span id="windchill">N/A</span></span></li>
-          </ul>
-        </section>
-      </div>
-    </section>
-
-    <!-- MOBILE-ONLY Cards (semantic duplicates for accessibility / stacking).
-         We reuse the same markup but show it only on small screens. -->
-    <section class="card data mobile-only" aria-labelledby="data-title-m">
-      <h3 id="data-title-m">Data</h3>
-      <ul class="kv">
-        <li><span class="k">Area:</span><span class="v">176,215 sq km</span></li>
-        <li><span class="k">Population:</span><span class="v">≈ 3,500,000</span></li>
-        <li><span class="k">Capital:</span><span class="v">Montevideo</span></li>
-        <li><span class="k">Languages:</span><span class="v">Spanish (Rioplatense)</span></li>
-        <li><span class="k">Currency:</span><span class="v">Uruguayan Peso (UYU)</span></li>
-        <li><span class="k">Time Zone:</span><span class="v">UTC−3</span></li>
-        <li><span class="k">Calling Code:</span><span class="v">+598</span></li>
-        <li><span class="k">Internet TLD:</span><span class="v">.uy</span></li>
-      </ul>
-    </section>
-
-    <section class="card weather mobile-only" aria-labelledby="weather-title-m">
-      <h3 id="weather-title-m">Weather</h3>
-      <figure class="weather-icon-mobile">
-        <img src="images/weather_icon.svg" alt="Partly cloudy icon" width="80" height="80">
-      </figure>
-      <ul class="kv">
-        <li><span class="k">Temperature:</span><span class="v"><span id="temp-value-m">10</span> °C</span></li>
-        <li><span class="k">Conditions:</span><span class="v">Partly Cloudy</span></li>
-        <li><span class="k">Wind:</span><span class="v"><span id="wind-value-m">5</span> km/h</span></li>
-        <li><span class="k">Wind Chill:</span><span class="v"><span id="windchill-m">N/A</span></span></li>
-      </ul>
+        <ul class="kv">
+          <li><span class="k">Temperature:</span><span class="v"><span id="temp-value">10</span> °C</span></li>
+          <li><span class="k">Conditions:</span><span class="v">Partly Cloudy</span></li>
+          <li><span class="k">Wind:</span><span class="v"><span id="wind-value">5</span> km/h</span></li>
+          <li><span class="k">Wind Chill:</span><span class="v"><span id="windchill">N/A</span></span></li>
+        </ul>
+      </section>
     </section>
   </main>
 

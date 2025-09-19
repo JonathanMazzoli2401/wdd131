@@ -1,7 +1,7 @@
 :root{
-  --primary: #5EC1F4;       
-  --primary-dark: #1B4965;  
-  --accent: #F0C419;        
+  --primary: #5EC1F4;
+  --primary-dark: #1B4965;
+  --accent: #F0C419;
   --surface: #ffffff;
   --text: #0f172a;
   --muted: #475569;
@@ -9,10 +9,19 @@
   --radius: 10px;
   --shadow: 0 10px 24px rgba(0,0,0,.16);
   --card-border: rgba(0,0,0,.06);
+
+  /* how far the ribbon sticks out on the left in wide view */
+  --ribbon-out: 29px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+html,body{
+  height:100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body{
   font-family: "Open Sans", sans-serif;
   color: var(--text);
@@ -20,7 +29,9 @@ body{
   line-height: 1.5;
 }
 
-/* ---------------- HEADER ---------------- */
+main{ flex:1;}
+
+/* HEADER */
 .site-header{
   background: var(--primary-dark);
   color: #fff;
@@ -31,12 +42,9 @@ body{
 .site-header h1{
   font: 700 clamp(1.6rem, 4.5vw, 2.4rem)/1 "Bebas Neue", sans-serif;
 }
-.accent-bar{
-  height: 8px;
-  background: var(--accent);
-  margin-top: .5rem;
-}
+.accent-bar{ height: 8px; background: var(--accent); margin-top: .4rem; }
 
+/* HERO */
 .hero{
   position: relative;
   width: min(1200px, 92vw);
@@ -45,14 +53,14 @@ body{
   overflow: hidden;
   box-shadow: var(--shadow);
 }
-.hero picture, .hero img{display:block; width:100%; height:auto}
+.hero picture, .hero img{ display:block; width:100%; height:auto; }
 
 .hero-title{
   position:absolute;
   top: 12px; left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  z-index: 1;
+  z-index: 1; /* validator-friendly replacement for pointer-events */
 }
 .hero-title h2{
   display:inline-block;
@@ -63,16 +71,16 @@ body{
   font:700 clamp(1.1rem,3vw,2rem)/1 "Bebas Neue",sans-serif;
 }
 
-.overlay-cards{ position:absolute; inset:0; display:none; }
-
+/* CARDS — mobile defaults (stack below the image) */
 .card{
   background: var(--surface);
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
   border: 1px solid var(--card-border);
   box-shadow: var(--shadow);
+  margin: .75rem auto 0;
+  width: min(800px,92vw);
 }
-
 .kv{ list-style:none; margin-top:.25rem; }
 .kv li{
   display:grid;
@@ -88,17 +96,17 @@ body{
   color:var(--primary-dark);
   text-align:center;
   margin-bottom:.6rem;
+  text-transform: capitalize;
+}
+.weather-icon-mobile{ display:block; text-align:center; margin-bottom:.5rem; }
+.weather-icon-mobile img {
+  max-width: 80px;   /* you can try 60px if you want it smaller */
+  height: auto;
+  display: inline-block;
 }
 
-.weather-icon-mobile{
-  display:block;
-  text-align:center;
-  margin-bottom:.5rem;
-}
-
-.mobile-only{ width:min(800px,92vw); margin:.75rem auto 0; }
-
-.site-footer{ margin-top:1rem; }
+/* FOOTER */
+.site-footer{ margin-top:auto;}
 .footer-bar{
   background:var(--primary-dark);
   color:#fff;
@@ -107,68 +115,42 @@ body{
   border-top:6px solid var(--accent);
 }
 
-/* ---------------- WIDE VIEW ---------------- */
+/* WIDE VIEW — overlay the same cards on the hero */
 @media (min-width:768px){
-  .mobile-only{ display:none; }
-  .overlay-cards{ position:absolute; inset:0; display:block; }
-
-  .overlay-cards .card{
-    position:absolute;
+  .card{
+    position:absolute;     /* overlay */
+    margin:0;
+    width:auto;
     background:rgba(255,255,255,.78);
     border:1px solid rgba(0,0,0,.10);
     box-shadow:0 10px 24px rgba(0,0,0,.16);
-    padding:1rem 1.1rem 1rem;             
+    padding:1rem 1.1rem 1rem;
     backdrop-filter:blur(4px);
     -webkit-backdrop-filter:blur(4px);
-    overflow:visible;                       
+    overflow:visible;       /* let the left stub stick out */
+    z-index:2;              /* cards over the hero title */
   }
 
-  :root{ --ribbon-out: 29px; }              
+  /* positions like your current layout */
+  .data{ top:11%; left:4%; max-width:430px; }
+  .weather{ right:4%; bottom:8.5%; max-width:360px; }
 
-  .overlay-cards .card h3{
-    display:flex;
+  /* single ribbon: half outside (left) + shorter inside */
+  .card h3{
+    margin: -1rem 0 .75rem 0;
+    display:inline-flex;
     align-items:center;
     transform: translateX(calc(-1 * var(--ribbon-out)));
-    width: auto;
-    max-width: 900%;
-    margin: -1rem 0 .75rem 0;               
-    padding: .70rem 1rem;
-    background: var(--primary-dark);       
+    max-width: 60%;                /* controls the inside length */
+    padding:.70rem 1rem;
+    background: var(--primary-dark);
     color:#fff;
     font:700 1.15rem/1 "Bebas Neue",sans-serif;
     letter-spacing:.4px;
     text-transform:none;
   }
 
-  .overlay-cards .weather h3::after{
-    content:"⛅";
-    margin-left:3rem;
-    font-size:1.1rem;
-    line-height:1;
-  }
-
-  .kv{ list-style:none; margin-top:.35rem; }
-  .kv li{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:.55rem;
-    padding:.18rem 0;
-  }
-  .k{ font-weight:700; color:#3b4453; }
-  .v{ font-weight:600; color:#1b2540; }
-
-  .overlay-cards .data{
-    top:11%;
-    left:4%;
-    max-width:430px;
-  }
-  .overlay-cards .weather{
-    right:4%;
-    bottom:8.5%;
-    max-width:360px;
-  }
-
-  .overlay-cards .weather .weather-icon-mobile{ display:none; }
+  /* wide: hide big SVG and add icon to the heading */
+  .weather .weather-icon-mobile{ display:none; }
+  .weather h3::after{ content:"⛅"; margin-left:.6rem; font-size:1.1rem; line-height:1; }
 }
-
-

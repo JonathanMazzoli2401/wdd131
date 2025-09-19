@@ -11,11 +11,10 @@ function calculateWindChill(Tc, vKmh){
   return 13.12 + (0.6215 * Tc) - (11.37 * Math.pow(vKmh, 0.16)) + (0.3965 * Tc * Math.pow(vKmh, 0.16));
 }
 
-/* ---- Bind to both mobile and wide cards ---- */
-function applyWindChill(tempSel, windSel, outSel){
-  const t = Number(document.querySelector(tempSel)?.textContent ?? NaN);
-  const v = Number(document.querySelector(windSel)?.textContent ?? NaN);
-  const out = document.querySelector(outSel);
+(function applyWindChill(){
+  const t = Number(document.querySelector("#temp-value")?.textContent ?? NaN);
+  const v = Number(document.querySelector("#wind-value")?.textContent ?? NaN);
+  const out = document.querySelector("#windchill");
   if (!out || isNaN(t) || isNaN(v)) return;
 
   if (t <= 10 && v > 4.8){
@@ -23,10 +22,4 @@ function applyWindChill(tempSel, windSel, outSel){
   } else {
     out.textContent = "N/A";
   }
-}
-
-// Wide overlay card
-applyWindChill("#temp-value", "#wind-value", "#windchill");
-
-// Mobile stacked card
-applyWindChill("#temp-value-m", "#wind-value-m", "#windchill-m");
+})();
