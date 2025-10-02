@@ -1,0 +1,89 @@
+:root {
+  --primary: #4E6C50;   /* Yerba Green */
+  --secondary: #A47551; /* Gourd Brown */
+  --accent1: #C0C0C0;   /* Bombilla Silver */
+  --accent2: #F5F0E1;   /* Warm Beige */
+  --accent3: #E6B655;   /* Herbal Yellow */
+  --ink: #1b1b1b;
+  --ink-muted: #555;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--accent2);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.6rem; font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 500; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Header */
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* mobile stacked */
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent3);
+}
+
+/* Main */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
