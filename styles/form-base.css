@@ -63,7 +63,7 @@ input[type="text"],input[type="date"],select,textarea{
 textarea{resize:vertical}
 input:focus,select:focus,textarea:focus{
   outline:none; border-color:var(--brand);
-  box-shadow:0 0 0 4px color-mix(in srgb, var(--brand) 25%, transparent);
+  box-shadow:0 0 0 4px rgba(14, 116, 144, 0.25);
 }
 
 /* Rating */
@@ -100,7 +100,7 @@ input:focus,select:focus,textarea:focus{
 .site-footer{
   text-align:center; padding:1.25rem .75rem 2rem;
   background:var(--brand); color:#fff; font-size:.95rem;
-  border-top:1px solid color-mix(in srgb,#000 10%,transparent);
+  border-top:1px solid rgba(0, 0, 0, .10);
   margin-top:auto;
 }
 .site-footer a{color:#fff; text-decoration:underline}
