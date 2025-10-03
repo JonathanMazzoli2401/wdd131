@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks for your review</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form-base.css">
+  <link rel="stylesheet" href="styles/form-large.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Thank you!</h1>
+    <p class="subtitle">Your review was submitted successfully.</p>
+  </header>
+
+  <main class="center-page">
+    <section class="card" id="thanks">
+      <h2 class="sr-only">Submission summary</h2>
+      <p id="summary"></p>
+      <p class="counter">Total reviews submitted from this browser: <strong id="count">0</strong></p>
+
+      <a class="cta linklike" href="form.html">← Write another review</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Jonathan Mazzoli — Las Piedras, Uruguay</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    function prettyFromId(id) {
+      if (!id) return "";
+      return id
+        .replace(/[-_]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .replace(/\b\w/g, ch => ch.toUpperCase());
+    }
+
+    const params  = new URLSearchParams(location.search);
+    const product = params.get('product') || '';   
+    const rating  = params.get('rating')  || '—';
+    const when    = params.get('submittedAt');
+
+    const productDisplay = /[-_]/.test(product) ? prettyFromId(product) : (product || 'your product');
+
+    const summaryEl = document.getElementById('summary');
+    if (summaryEl) {
+      summaryEl.textContent =
+        `We received your ${rating}-star review for “${productDisplay || 'your product'}”` +
+        (when ? ` on ${new Date(when).toLocaleString()}` : '') + '.';
+    }
+
+    const KEY = 'reviewCount';
+    if (params.has('product')) {
+      const current = Number(localStorage.getItem(KEY) || 0) + 1;
+      localStorage.setItem(KEY, String(current));
+    }
+    const countEl = document.getElementById('count');
+    if (countEl) countEl.textContent = localStorage.getItem(KEY) || 0;
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+
+      const lmEl = document.getElementById("lastModified");
+      if (lmEl) {
+        let lm = (document.lastModified || "").trim();
+        if (!lm) lm = new Date().toString();
+        const d = new Date(lm);
+        lmEl.textContent = isNaN(d.getTime()) ? lm : d.toLocaleString();
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review</title>
+
+  <!-- Fuentes NUEVAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles/form-base.css">
+  <link rel="stylesheet" href="styles/form-large.css">
+
+  <script src="scripts/review.js" defer></script>
+  <script src="scripts/form.js" defer></script>
+
+  <meta name="description" content="WDD131 - Product Review Form" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Product Review</h1>
+    <p class="subtitle">Share your experience — help others decide.</p>
+  </header>
+
+  <main>
+    <form id="reviewForm" action="review.html" method="get" class="card form-grid">
+      <!-- PRODUCT -->
+      <label for="product">Product Name <span aria-hidden="true">*</span></label>
+      <select id="product" name="product" required>
+        <option value="" selected disabled>Choose a product…</option>
+        <!-- Se llena por JS (review.js) -->
+      </select>
+
+      <!-- RATING -->
+      <fieldset class="rating">
+        <legend>Overall Rating <span aria-hidden="true">*</span></legend>
+        <div class="stars">
+          <label><input type="radio" name="rating" value="1" required> ★</label>
+          <label><input type="radio" name="rating" value="2"> ★★</label>
+          <label><input type="radio" name="rating" value="3"> ★★★</label>
+          <label><input type="radio" name="rating" value="4"> ★★★★</label>
+          <label><input type="radio" name="rating" value="5"> ★★★★★</label>
+        </div>
+      </fieldset>
+
+      <!-- DATE -->
+      <label for="install">Date of Installation</label>
+      <input type="date" id="install" name="install">
+
+      <!-- FEATURES -->
+      <fieldset>
+        <legend>Which features did you find useful? <span class="hint">(check all that apply)</span></legend>
+        <label class="check"><input type="checkbox" name="features" value="Durability"> Durability</label>
+        <label class="check"><input type="checkbox" name="features" value="Ease of Use"> Ease of Use</label>
+        <label class="check"><input type="checkbox" name="features" value="Performance"> Performance</label>
+        <label class="check"><input type="checkbox" name="features" value="Design"> Design</label>
+      </fieldset>
+
+      <!-- REVIEW -->
+      <label for="written">Written Review <span class="hint">(optional)</span></label>
+      <textarea id="written" name="written" rows="6" minlength="10" placeholder="What stood out to you? Pros, cons, tips…"></textarea>
+
+      <!-- NAME -->
+      <label for="user">Your Name <span class="hint">(optional)</span></label>
+      <input id="user" name="user" type="text" inputmode="latin-name" autocomplete="name" placeholder="e.g., Alex R.">
+
+      <!-- HIDDEN: para registrar timestamp (se completa en JS) -->
+      <input type="hidden" id="submittedAt" name="submittedAt" value="">
+
+      <button class="cta" type="submit">Post Review</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Jonathan Mazzoli - Uruguay</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+
+</body>
+</html>
