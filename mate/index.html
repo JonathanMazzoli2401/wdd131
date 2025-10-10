@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mate - Home</title>
+        <meta name="description" content="Discover yerba mate culture: varieties, how to brew, and essentials for the perfect mate experience.">
+        <meta name="author" content="Jonathan Mazzoli">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/mate/styles/main.css">
+        <link rel="stylesheet" href="/mate/styles/main-large.css">
+
+        <script src="/mate/scripts/app.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrap nav">
+                <a class="logo" href="/mate/index.html" aria-label="Mate Home">MATE - The Drink of Uruguay</a>
+                <nav aria-label="Primary">
+                    <a href="/mate/index.html" data-nav="home">Home</a>
+                    <a href="/mate/varieties.html" data-nav="varieties">Varieties</a>
+                    <a href="/mate/brew.html" data-nav="brew">Brew Guide</a>
+                    <a href="/mate/contact.html" data-nav="contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="Wrap">
+            <section class="hero">
+                <picture>
+                    <source srcset="/mate/images/hero.jpg" type="image/jpeg">
+                    <img src="/mate/images/hero.jpg" alt="A gourd of yerba mate with bombilla" loading="eager" width="1200" height="600">
+                </picture>
+                <div class="hero-content">
+                    <h1>Find your perfect <span>Yerba Mate</span></h1>
+                    <p>Explore flavors, learn the ritual, and brew like a local.</p>
+                    <p class="cta-row">
+                        <a class="btn" href="varieties.html">Explore Varieties</a>
+                        <a class="btn btn-secondary" href="brew.html">Brew Guide</a>
+                    </p>
+                </div>
+            </section>
+            <section class="why-mate" aria-labelledby="benefits">
+                <h2 id="benefits">Why Mate?</h2>
+                <div class="cards-3">
+                    <article class="card">
+                        <img src="images/thermos.jpg" alt="Thermos with hot water" loading="lazy">
+                        <h3>Anytime Energy</h3>
+                        <p>Natural caffeine with smooth, steady focus.</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/calabash.jpg" alt="Calabash gourd" loading="lazy">
+                        <h3>Ritual &amp; Community</h3>
+                        <p>Share the round—mate is best with friends and family.</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/bombilla.jpg" alt="Stainless bombilla" loading="lazy">
+                        <h3>Simple Tools</h3>
+                        <p>Just yerba, a gourd, a bombilla, and hot (not boiling) water.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="promo" aria-labelledby="resume">
+                <h2 id="resume">Continue where you left off</h2>
+                <p id="resumeText">We’ll remember your favorite difficulty (soft/medium/bitter) and last brew ratio.</p>
+                <p><a class="btn" href="varieties.html">Go to Varieties</a></p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrap">
+                <small>© <span id="year"></span> Mate Project · <a href="references.html">References</a></small>
+            </div>
+        </footer>
+    </body>
+</html>

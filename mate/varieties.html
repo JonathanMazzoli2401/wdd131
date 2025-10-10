@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mate - Varieties</title>
+        <meta name="description" content="Compare yerba mate varieties by flavor, cut, origin, and price.">
+        <meta name="author" content="Jonathan Mazzoli">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/mate/styles/main.css">
+        <link rel="stylesheet" href="/mate/styles/main-large.css">
+
+        <script src="/mate/scripts/data.js" defer></script>
+        <script src="/mate/scripts/varieties.js" defer></script>
+        <script src="/mate/scripts/app.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrap nav">
+                <a class="logo" href="index.html">MATE - The Drink of Uruguay</a>
+                <nav aria-label="Primary">
+                    <a href="index.html" data-nav="home">Home</a>
+                    <a href="varieties.html" data-nav="varieties">Varieties</a>
+                    <a href="brew.html" data-nav="brew">Brew Guide</a>
+                    <a href="contact.html" data-nav="contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <h1>Yerba Mate Varieties</h1>
+
+            <form id="filters" class="filters" aria-label="Filter varieties">
+                <label>
+                    Flavor
+                    <select name="flavor">
+                        <option value="">Any</option>
+                        <option value="soft">Soft</option>
+                        <option value="balanced">Balanced</option>
+                        <option value="bitter">Bitter</option>
+                    </select>
+                </label>
+                <label>
+                    Origin
+                    <select name="origin">
+                        <option value="">Any</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Paraguay">Paraguay</option>
+                    </select>
+                </label>
+                <label>
+                    Sort by
+                    <select name="sort">
+                        <option value="price-asc">Price ↑</option>
+                        <option value="price-desc">Price ↓</option>
+                        <option value="name-asc">Name A–Z</option>
+                    </select>
+                </label>
+                <button type="button" id="clearBtn" class="btn btn-secondary">Clear</button>
+            </form>
+
+            <section id="grid" class="grid"></section>
+
+            <aside class="favorites" aria-labelledby="favtitle">
+                <h2 id="favtitle">Favorites</h2>
+                <ul id="favList" class="fav-list"></ul>
+            </aside>
+
+            <section class="tools" aria-labelledby="toolsTitle">
+                <h2 id="toolsTitle">Essential Mate Tools</h2>
+                <p>Here are the simple tools used to prepare and enjoy yerba mate every day.</p>
+
+                <div class="cards-3">
+                    <article class="card">
+                        <img src="images/gourd.jpg" alt="Traditional mate gourd" loading="lazy">
+                        <h3>Mate Gourd (Calabash)</h3>
+                        <p>The classic vessel for serving mate. Traditionally made from calabash gourd, now also in wood, metal, or ceramic.</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/bombillastanley.jpg" alt="Bombilla straw for yerba mate" loading="lazy">
+                        <h3>Bombilla (Filter Straw)</h3>
+                        <p>A metal straw with a filter at the end. It allows you to sip the infusion without swallowing the yerba leaves.</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/thermo.jpg" alt="Thermos with hot water for mate" loading="lazy">
+                        <h3>Thermos (Hot Water)</h3>
+                        <p>Keeps the water at the right temperature—hot, but not boiling—so you can refill the gourd many times.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrap">
+                <small>© <span id="year"></span> Mate Project · <a href="references.html">References</a></small>
+            </div>
+        </footer>  
+    </body>
+</html>

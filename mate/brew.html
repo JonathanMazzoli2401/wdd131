@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mate - Brew Guide</title>
+        <meta name="description" content="Step-by-step brew guide and ratio calculator for yerba mate.">
+        <meta name="author" content="Jonathan Mazzoli">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/mate/styles/main.css">
+        <link rel="stylesheet" href="/mate/styles/main-large.css">
+
+        <script src="/mate/scripts/app.js" defer></script>
+        <script src="/mate/scripts/brew.js" defer></script>
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="wrap nav">
+                <a class="logo" href="index.html">MATE - The Drink of Uruguay</a>
+                <nav aria-label="Primary">
+                    <a href="index.html" data-nav="home">Home</a>
+                    <a href="varieties.html" data-nav="varieties">Varieties</a>
+                    <a href="brew.html" data-nav="brew">Brew Guide</a>
+                    <a href="contact.html" data-nav="contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <h1>Brew Guide</h1>
+            <ol class="steps">
+                <li>Fill the gourd ~⅔ with yerba, cover, and shake to bring dust to the top.</li>
+                <li>Tilt the yerba to create a slope. Add a little warm water to hydrate.</li>
+                <li>Insert the bombilla at the lower side. Pour hot water (70–80 °C), not boiling.</li>
+                <li>Drink and refill along the same side to preserve flavor longer.</li>
+            </ol>
+
+            <section class="calculator" aria-labelledby="calcTitle">
+                <h2 id="calcTitle">Ratio Calculator</h2>
+                <form id="calcForm">
+                    <label>Gourd Capacity (ml)
+                        <input type="number" name="capacity" id="capacity" min="150" max="500" step="10" required>
+                    </label>
+                    <label>Strength
+                        <select name="strength" id="strength">
+                            <option value="soft">Soft (1:12)</option>
+                            <option value="medium" selected>Medium (1:10)</option>
+                            <option value="bitter">Bitter (1:8)</option>
+                        </select>
+                    </label>
+                    <button class="btn" type="submit">Calculate</button>
+                </form>
+                <p id="calcResult" class="result" aria-live="polite"></p>
+                <p class="small">Your last settings are saved and applied automatically.</p>
+            </section>   
+            <section class="promo" aria-labelledby="healthTitle">
+                <h2 id="healthTitle">Health Benefits</h2>
+                <p>
+                Yerba mate provides natural <strong>antioxidants (polyphenols)</strong> and gentle stimulants like
+                <strong>caffeine</strong> and <strong>theobromine</strong>, which many people find give steady focus without a hard crash.
+                It also contains small amounts of <strong>vitamins</strong> (B-group, C) and <strong>minerals</strong> (potassium, magnesium).
+                If you’re sensitive to caffeine, start with a smaller serving and avoid drinking it close to bedtime.
+                </p>
+            </section>     
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrap">
+                <small>© <span id="year"></span> Mate Project · <a href="references.html">References</a></small>
+            </div>
+        </footer>      
+    </body>
+</html>     
