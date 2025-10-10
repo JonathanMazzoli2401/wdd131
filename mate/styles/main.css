@@ -16,7 +16,8 @@ input, button, textarea, select { font: inherit; }
   --highlight:#E6B655; /* Herbal Yellow (chips/badges/cta-alt) */
   --text:#0E0E10;
   --muted:#6B7280;
-  --border: color-mix(in srgb, var(--accent) 70%, #fff);
+  --border-color: #d6d6d6;
+  --chip-bg: #F9EDD5;
 
   --radius:16px;
   --shadow:0 10px 22px rgba(0,0,0,.06);
@@ -162,7 +163,7 @@ a:hover{ text-decoration: underline; }
 
 .card {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1rem;
@@ -186,7 +187,7 @@ a:hover{ text-decoration: underline; }
 .promo{
   margin-top: 1rem;
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius);
   padding: var(--space-5);
 }
@@ -197,7 +198,7 @@ a:hover{ text-decoration: underline; }
   gap: .6rem;
   background: var(--bg);
   padding: var(--space-5);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius);
 }
 .filters label{
@@ -220,7 +221,7 @@ a:hover{ text-decoration: underline; }
 }
 .item{
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 14px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -229,9 +230,9 @@ a:hover{ text-decoration: underline; }
 }
 .item img{
   width: 100%;
-  height: auto;          /* ← no altura fija en mobile */
-  max-height: 220px;     /* límite visual, sin recortar */
-  object-fit: contain;   /* ← muestra la imagen completa */
+  height: auto;          
+  max-height: 220px;     
+  object-fit: contain;   
   background: #fff;
   padding: .5rem;
   border-radius: 10px;
@@ -243,7 +244,8 @@ a:hover{ text-decoration: underline; }
   font-size: .85rem;
   padding: .2rem .55rem;
   border-radius: 999px;
-  background: #eef7f1;
+  background: var(--chip-bg);
+  border: 1px solid var(--border-color);
 }
 .price{ font-weight: 700; }
 
@@ -288,7 +290,7 @@ ol.steps li {
 .calculator{
   margin: 1rem 0;
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius);
   padding: var(--space-5);
 }
@@ -311,7 +313,7 @@ ol.steps li {
   gap: 1rem;
 }
 fieldset{
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: var(--space-5);
 }
